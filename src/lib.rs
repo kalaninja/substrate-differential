@@ -13,14 +13,15 @@
 use frame_support::{pallet_prelude::*, traits::GetCallMetadata};
 use frame_system::pallet_prelude::*;
 use sp_runtime::traits::Dispatchable;
+use sp_std::prelude::*;
 
+pub use differentiate_pallets::DifferentiatePallets;
 pub use pallet::*;
 
 use crate::limits::PalletsWeightDistribution;
 
 mod differentiate_pallets;
-mod limits;
-
+pub mod limits;
 #[cfg(test)]
 mod mock;
 

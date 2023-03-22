@@ -23,6 +23,11 @@ impl<T: Config + Send + Sync> DifferentiatePallets<T>
 where
     <T as Config>::RuntimeCall: Dispatchable<Info = DispatchInfo>,
 {
+    /// Create a new instance of the extension.
+    pub fn new() -> Self {
+        Self(Default::default())
+    }
+
     /// Do the pre-dispatch checks. This can be applied to both signed and unsigned transactions.
     pub fn do_pre_dispatch(
         call: &<T as Config>::RuntimeCall,
